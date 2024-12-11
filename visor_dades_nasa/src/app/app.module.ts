@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';  // Assegura't que estigui afegit
 import { AppComponent } from './app.component';
 import { NasaDataComponent } from './nasa-data/nasa-data.component';
+import { NasaService } from './nasa.service';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,7 @@ import { NasaDataComponent } from './nasa-data/nasa-data.component';
     BrowserModule,
     HttpClientModule  // Ha d'estar aquí
   ],
-  providers: [],
+  providers: [NasaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
