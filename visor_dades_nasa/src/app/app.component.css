@@ -17,4 +17,40 @@
     align-items: center;
     margin-top: 20px;
   }
-  
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box; /* Assegura't que el padding es compta dins de l'ample */
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-buttons button {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.nav-buttons button:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+}
+
+.content {
+  margin-top: 70px; /* Ajusta aquest valor segons l'alçada de la teva barra de navegació */
+}

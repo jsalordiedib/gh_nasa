@@ -1,9 +1,15 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';  // Assegura't que estigui afegit
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
+
 import { AppComponent } from './app.component';
 import { NasaDataComponent } from './nasa-data/nasa-data.component';
 import { NasaService } from './nasa.service';
+
+const routes: Routes = [
+  { path: '', component: NasaDataComponent }
+];
 
 @NgModule({
   declarations: [
@@ -12,7 +18,8 @@ import { NasaService } from './nasa.service';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule  // Ha d'estar aquí
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [NasaService],
   bootstrap: [AppComponent]

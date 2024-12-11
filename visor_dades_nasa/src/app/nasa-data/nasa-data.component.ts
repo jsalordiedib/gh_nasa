@@ -19,10 +19,22 @@ export class NasaDataComponent implements OnInit {
   }
 
   fetchData(): void {
-    this.nasaService.getNasaData(this.currentPage, this.perPage).subscribe(data => {
+    const dates = this.generateDates(this.currentPage, this.perPage);
+    this.nasaService.getNasaData(dates).subscribe(data => {
       this.nasaData = data;
-      this.totalPages = Math.ceil(data.length / this.perPage);
+      this.totalPages = Math.ceil(30 / this.perPage); // Suposem que hi ha 30 dies de dades disponibles
     });
+  }
+
+  generateDates(page: number, perPage: number): string[] {
+    const dates = [];
+    const today = new Date();
+    for (let i = 0; i < perPage; i++) {
+      const date = new Date(today);
+      date.setDate(today.getDate() - ((page - 1) * perPage + i));
+      dates.push(date.toISOString().split('T')[0]);
+    }
+    return dates;
   }
 
   prevPage(): void {

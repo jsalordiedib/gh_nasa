@@ -1,1 +1,12 @@
-<app-nasa-data></app-nasa-data>
+<!-- src/app/app.component.html -->
+<nav class="navbar">
+  <h1>Visor de Dades de la NASA</h1>
+  <div class="nav-buttons">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">Anterior</button>
+    <span>Pàgina {{ currentPage }} de {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Següent</button>
+  </div>
+</nav>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
