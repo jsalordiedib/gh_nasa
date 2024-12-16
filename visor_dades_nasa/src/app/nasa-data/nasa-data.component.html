@@ -10,13 +10,6 @@
         <p>{{ item.explanation }}</p>
       </div>
     </div>
-
-    <!-- Paginació -->
-    <div class="pagination">
-      <button (click)="prevPage()" [disabled]="currentPage === 1">Anterior</button>
-      <span>Pàgina {{ currentPage }} de {{ totalPages }}</span>
-      <button (click)="nextPage()" [disabled]="currentPage === totalPages">Següent</button>
-    </div>
   </div>
 
   <ng-template #noData>
