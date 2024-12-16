@@ -1,0 +1,14 @@
+.welcome-container {
+  text-align: center;
+  margin: 20px;
+}
+
+.welcome-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.welcome-container p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
