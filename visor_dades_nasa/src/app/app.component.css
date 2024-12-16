@@ -54,5 +54,11 @@ img {
 }
 
 .content {
-  margin-top: 120px; /* Ajusta aquest valor segons sigui necessari */
+  margin-top: 80px; /* Ajusta aquest valor segons sigui necessari */
+  display: flex;
+  justify-content: center;
+}
+
+.content-wrapper {
+  width: 80%;
 }
