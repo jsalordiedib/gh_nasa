@@ -2,6 +2,13 @@
 <div class="container">
   <h2>Dades de la NASA</h2>
 
+  <!-- Paginació -->
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">Anterior</button>
+    <span>Pàgina {{ currentPage }} de {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Següent</button>
+  </div>
+
   <div *ngIf="nasaData.length > 0; else noData">
     <div *ngFor="let item of nasaData">
       <div class="nasa-item">
