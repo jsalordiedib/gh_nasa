@@ -4,18 +4,16 @@
 
   <!-- Paginació -->
   <div class="pagination">
-    <button (click)="prevPage()" [disabled]="currentPage === 1">Anterior</button>
-    <span>Pàgina {{ currentPage }} de {{ totalPages }}</span>
-    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Següent</button>
+    <button class="nav-button" (click)="prevPage()" [disabled]="currentPage === 1">Anterior</button>
+    <span> Pàgina {{ currentPage }} de {{ totalPages }} </span>
+    <button class="nav-button" (click)="nextPage()" [disabled]="currentPage === totalPages">Següent</button>
   </div>
 
-  <div *ngIf="nasaData.length > 0; else noData">
-    <div *ngFor="let item of nasaData">
-      <div class="nasa-item">
-        <h3>{{ item.title }}</h3>
-        <img [src]="item.url" alt="{{ item.title }}" width="100%">
-        <p>{{ item.explanation }}</p>
-      </div>
+  <div *ngIf="nasaData.length > 0; else noData" class="nasa-grid">
+    <div *ngFor="let item of nasaData" class="nasa-item">
+      <h3>{{ item.title }}</h3>
+      <img [src]="item.url" alt="{{ item.title }}" width="100%">
+      <p>{{ item.explanation }}</p>
     </div>
   </div>
 

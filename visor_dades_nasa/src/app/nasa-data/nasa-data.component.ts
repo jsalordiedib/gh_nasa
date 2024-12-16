@@ -10,7 +10,7 @@ export class NasaDataComponent implements OnInit {
   nasaData: NasaData[] = [];
   currentPage = 1;
   totalPages = 1;
-  perPage = 10;
+  perPage = 9;
 
   constructor(private nasaService: NasaService) {}
 
