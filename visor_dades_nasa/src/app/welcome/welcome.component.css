@@ -1,6 +1,7 @@
 .welcome-container {
   text-align: center;
   margin: 20px;
+  padding: 20px;
 }
 
 .welcome-container h1 {
@@ -11,4 +12,9 @@
 .welcome-container p {
   font-size: 1.2rem;
   margin-bottom: 10px;
+}
+
+.nasa-logo {
+  margin-top: 20px; /* Distància superior */
+  width: 600px; /* Amplada de la imatge */
 }
