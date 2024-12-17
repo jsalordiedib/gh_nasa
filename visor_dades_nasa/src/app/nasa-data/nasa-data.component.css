@@ -1,0 +1,50 @@
+/* Estilització dels botons del navegador */
+.nav-button {
+  background-color: #333; /* Color de fons concordant amb la barra de navegació */
+  color: white; /* Color del text */
+  border: none; /* Sense vora */
+  padding: 10px 20px; /* Espaiat intern */
+  text-align: center; /* Alineació del text */
+  text-decoration: none; /* Sense subratllat */
+  display: inline-block; /* Mostrar en línia */
+  font-size: 16px; /* Mida del text */
+  margin: 4px 2px; /* Màrgin */
+  cursor: pointer; /* Cursor de mà */
+  border-radius: 4px; /* Vores arrodonides */
+}
+
+.nav-button:hover {
+  background-color: #555555; /* Color de fons en passar el cursor */
+}
+
+/* Estilització del contenidor de la graella */
+.nasa-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Espai entre els elements */
+  padding-top: 20px;
+}
+
+/* Estilització dels elements de la graella */
+.nasa-item {
+  flex: 1 1 calc(33.333% - 20px); /* Tres columnes amb espai entre elles */
+  box-sizing: border-box; /* Incloure el padding i el border en el càlcul de l'ample */
+  border: 1px solid #ddd; /* Vora dels elements */
+  padding: 10px; /* Espaiat intern */
+  border-radius: 4px; /* Vores arrodonides */
+  background-color: #f9f9f9; /* Color de fons */
+}
+
+/* Destacar els elements quan es passa el ratolí per sobre */
+.nasa-item:hover {
+  background-color: #e0e0e0; /* Color de fons destacat */
+  border-color: #bbb; /* Color de la vora destacat */
+}
+
+h2 {
+    color: #333;
+}
+
+.container {
+    padding: 20px;
+}

@@ -1,7 +1,13 @@
 <!-- src/app/app.component.html -->
 <nav class="navbar">
   <h1>Visor de Dades de la NASA</h1>
+  <ul>
+    <li><a routerLink="/">Inici</a></li>
+    <li><a routerLink="/nasa-data">Visor</a></li>
+  </ul>
 </nav>
 <div class="content">
-  <router-outlet></router-outlet>
+  <div class="content-wrapper">
+    <router-outlet></router-outlet>
+  </div>
 </div>

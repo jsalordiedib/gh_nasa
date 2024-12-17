@@ -6,20 +6,25 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NasaDataComponent } from './nasa-data/nasa-data.component';
 import { NasaService } from './nasa.service';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { AppRoutingModule } from './app-routing.module'; // Importa AppRoutingModule
 
 const routes: Routes = [
-  { path: '', component: NasaDataComponent }
+  { path: '', component: WelcomeComponent },
+  { path: 'nasa-data', component: NasaDataComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    NasaDataComponent
+    NasaDataComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    AppRoutingModule // Afegeix AppRoutingModule a la secció imports
   ],
   providers: [NasaService],
   bootstrap: [AppComponent]
