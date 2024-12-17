@@ -7,13 +7,15 @@ import { NasaService, NasaData } from '../nasa.service';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
-  randomNasaData: NasaData | null = null;
+  // Elimina aquesta línia
+  // randomNasaData: NasaData | null = null;
 
   constructor(private nasaService: NasaService) {}
 
   ngOnInit(): void {
-    this.nasaService.getRandomNasaData().subscribe(data => {
-      this.randomNasaData = data;
-    });
+    // Elimina aquest bloc de codi
+    // this.nasaService.getRandomNasaData().subscribe(data => {
+    //   this.randomNasaData = data;
+    // });
   }
 }

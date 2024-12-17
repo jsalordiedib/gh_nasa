@@ -1,0 +1,7 @@
+<!-- src/app/apod/apod.component.html -->
+<div class="apod-container" *ngIf="apodData">
+  <h2>APOD: Astronomy Image Of the Day</h2>
+  <h3>{{ apodData.title }}</h3>
+  <img [src]="apodData.url" alt="{{ apodData.title }}" width="100%">
+  <p>{{ apodData.explanation }}</p>
+</div>
