@@ -8,27 +8,27 @@ import { take } from 'rxjs/operators';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent implements OnInit {
-  apodDates: string[] = [];
+  apodData: NasaData[] = [];
 
   constructor(private nasaService: NasaService) {}
 
   ngOnInit(): void {
-    this.fetchApodDates();
+    this.fetchApodData();
   }
 
-  fetchApodDates(): void {
+  fetchApodData(): void {
     const dates = this.generateDates(7); // Obtenir les dates dels últims 7 dies
-    this.nasaService.getNasaData(dates).pipe(take(1)).subscribe(
-      (data: NasaData[]) => { // Especificar el tipus del paràmetre data
+    this.nasaService.getNasaData(dates).pipe(take(1)).subscribe({
+      next: (data: NasaData[]) => {
         console.log('Dades rebudes:', data); // Afegir log per veure les dades rebudes
-        this.apodDates = data.map(item => item.date);
-        console.log('Dates APOD:', this.apodDates); // Afegir log per veure les dates APOD
+        this.apodData = data;
+        console.log('Dates APOD:', this.apodData); // Afegir log per veure les dates APOD
       },
-      error => {
+      error: (error: any) => {
         console.error("Error en la petició a l'API:", error);
         alert("Has superat el límit de peticions a l'API de la NASA. Si us plau, intenta-ho més tard.");
       }
-    );
+    });
   }
 
   generateDates(days: number): string[] {
