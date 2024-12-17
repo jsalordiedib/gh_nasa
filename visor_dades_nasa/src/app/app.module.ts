@@ -8,7 +8,8 @@ import { NasaDataComponent } from './nasa-data/nasa-data.component';
 import { NasaService } from './nasa.service';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ApodComponent } from './apod/apod.component'; // Importa AppRoutingModule
+import { ApodComponent } from './apod/apod.component';
+import { CalendarComponent } from './calendar/calendar.component'; // Importa AppRoutingModule
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
@@ -20,7 +21,8 @@ const routes: Routes = [
     AppComponent,
     NasaDataComponent,
     WelcomeComponent,
-    ApodComponent
+    ApodComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,

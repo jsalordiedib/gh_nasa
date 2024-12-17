@@ -1,0 +1,28 @@
+/* src/app/calendar/calendar.component.css */
+.calendar-container {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+}
+
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.calendar-date {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.calendar-date:hover {
+  background-color: #e0e0e0;
+}
