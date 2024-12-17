@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable, forkJoin, of } from 'rxjs';
+import { Observable, of, forkJoin } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 export interface NasaData {
@@ -34,10 +34,10 @@ export class NasaService {
     );
   }
 
-  getRandomNasaData(): Observable<NasaData> {
+  getApod(): Observable<NasaData> {
     const params = new HttpParams().set('api_key', this.apiKey);
     return this.http.get<NasaData>(this.apiUrl, { params }).pipe(
-      tap(data => console.log('Dada aleatòria rebuda de l\'API:', data)),
+      tap(data => console.log('Dada APOD rebuda de l\'API:', data)),
       catchError(error => {
         console.error('Error en la petició a l\'API:', error);
         return of({ title: '', url: '', explanation: '' } as NasaData); // Retorna un objecte buit en cas d'error
