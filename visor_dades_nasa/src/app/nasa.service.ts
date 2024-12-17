@@ -7,6 +7,7 @@ export interface NasaData {
   title: string;
   url: string;
   explanation: string;
+  date: string;
 }
 
 @Injectable({
@@ -40,7 +41,7 @@ export class NasaService {
       tap(data => console.log('Dada APOD rebuda de l\'API:', data)),
       catchError(error => {
         console.error('Error en la petició a l\'API:', error);
-        return of({ title: '', url: '', explanation: '' } as NasaData); // Retorna un objecte buit en cas d'error
+        return of({ title: '', url: '', explanation: '', date: '' } as NasaData); // Retorna un objecte buit en cas d'error
       })
     );
   }

@@ -12,8 +12,14 @@ export class ApodComponent implements OnInit {
   constructor(private nasaService: NasaService) {}
 
   ngOnInit(): void {
-    this.nasaService.getApod().subscribe(data => {
-      this.apodData = data;
-    });
+    this.nasaService.getApod().subscribe(
+      (data: NasaData) => {
+        this.apodData = data;
+      },
+      (error: any) => {
+        console.error("Error en la petició a l'API:", error);
+        alert("Has superat el límit de peticions a l'API de la NASA. Si us plau, intenta-ho més tard.");
+      }
+    );
   }
 }

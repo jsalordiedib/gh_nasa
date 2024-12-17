@@ -1,3 +1,4 @@
+/* src/app/nasa-data/nasa-data.component.css */
 /* Estilització dels botons del navegador */
 .nav-button {
   background-color: #333; /* Color de fons concordant amb la barra de navegació */
@@ -35,16 +36,10 @@
   background-color: #f9f9f9; /* Color de fons */
 }
 
-/* Destacar els elements quan es passa el ratolí per sobre */
-.nasa-item:hover {
-  background-color: #e0e0e0; /* Color de fons destacat */
-  border-color: #bbb; /* Color de la vora destacat */
-}
-
-h2 {
-    color: #333;
-}
-
-.container {
-    padding: 20px;
+/* Centrar el div de paginació */
+.pagination {
+  display: flex;
+  justify-content: center; /* Centrar el contingut horitzontalment */
+  align-items: center; /* Centrar el contingut verticalment */
+  margin-top: 20px;
 }

@@ -3,3 +3,10 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+
+/* src/styles.css */
+h2 {
+  font-size: 2.5rem; /* Ajusta la mida segons sigui necessari */
+  color: #333;
+  text-align: center; /* Centrar el text */
+}

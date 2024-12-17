@@ -1,0 +1,10 @@
+<!-- src/app/calendar/calendar.component.html -->
+<div class="calendar-container">
+  <h2>Dates de les darrers 7 imatges</h2>
+  <div class="calendar">
+    <div *ngFor="let item of apodData" class="calendar-date">
+      <strong>{{ item.date }}</strong>
+      <p>{{ item.title }}</p>
+    </div>
+  </div>
+</div>
