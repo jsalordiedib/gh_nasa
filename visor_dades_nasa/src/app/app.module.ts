@@ -9,11 +9,13 @@ import { NasaService } from './nasa.service';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ApodComponent } from './apod/apod.component';
-import { CalendarComponent } from './calendar/calendar.component'; // Importa AppRoutingModule
+import { CalendarComponent } from './calendar/calendar.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
-  { path: 'nasa-data', component: NasaDataComponent }
+  { path: 'nasa-data', component: NasaDataComponent },
+  { path: 'apod', component: ApodComponent },
+  { path: 'calendar', component: CalendarComponent }
 ];
 
 @NgModule({
@@ -28,7 +30,7 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    AppRoutingModule // Afegeix AppRoutingModule a la secció imports
+    AppRoutingModule
   ],
   providers: [NasaService],
   bootstrap: [AppComponent]
