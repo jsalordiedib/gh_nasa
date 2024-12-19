@@ -26,7 +26,7 @@ export class NasaService {
         .set('date', date);
       return this.http.get<NasaData>(this.apiUrl, { params });
     });
-    return forkJoin<NasaData[]>(requests).pipe(
+    return forkJoin(requests).pipe(
       tap(data => console.log('Dades rebudes de l\'API:', data)),
       catchError(error => {
         console.error('Error en la petició a l\'API:', error);
