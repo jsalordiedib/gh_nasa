@@ -1,0 +1,43 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Es dispara quan hi ha un push directe a la branca "main"
+  pull_request:
+    branches:
+      - main  # També es dispara quan es fa un merge a "main" des d'un pull request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Checkout del codi
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # 2. Instal·lar Node.js
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18  # Canvia la versió de Node.js si cal
+
+    # 3. Instal·lar dependències del projecte Angular
+    - name: Install dependencies
+      run: |
+        cd visor_dades_nasa
+        npm install
+
+    # 4. Compilar el projecte Angular
+    - name: Build Angular project
+      run: |
+        cd visor_dades_nasa
+        npm run build -- --output-path ../docs --base-href "/gh_nasa/"
+
+    # 5. Desplegar a GitHub Pages
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs  # Especifica la carpeta que conté el build
